@@ -48,4 +48,8 @@ def login_view(request):
 
 
 def profile(request):
-    return render(request, 'profile.html')
+    first_name = ""
+    if request.user.is_authenticated:
+        first_name = request.user.first_name
+    print(first_name)
+    return render(request, 'profile.html', {"first_name": first_name})
