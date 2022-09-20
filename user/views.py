@@ -41,8 +41,10 @@ def login_view(request):
         print(user)
         if user:
             login(request, user)
-            messages.success(request, "Successfully log in.")
+            messages.success(request,"Successfully log in.")
             return redirect("profile")
+        else:
+            messages.error(request, 'invalid credentials.')
     return render(request, 'login.html')
 
 

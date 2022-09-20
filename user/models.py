@@ -14,3 +14,11 @@ class User(AbstractUser):
     #
     # class Meta:
     #     db_table = 'user'
+
+
+class MiddlewareDetails(models.Model):
+    request_method = models.CharField(max_length=100)
+    url = models.CharField(max_length=100)
+    count= models.IntegerField(max_length=100)
+
+

@@ -7,9 +7,14 @@
     <title>Authentication</title>
 </head>
 <body>
+
+    {% if messages %}
+    <ul class="messages">
     {% for message in messages %}
-    <h1>{{ message }}</h1>
+      <li class="{{ message.tags }}"><h1>{{ message }}</h1></li>
     {% endfor %}
+     </ul>
+{% endif %}
    <h3>Welcome to Fundoo_Notes {{ first_name }} </h3>
 
 
